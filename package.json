@@ -1,15 +1,16 @@
 {
-  "name": "fastify-backend-architecture",
+  "name": "deals-app",
   "version": "1.0.0",
-  "description": "Basic extendable backend architecture",
+  "description": "Basic app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaroslawtt/fastify-backend-architecture.git"
+    "url": "git+https://github.com/jaroslawtt/deals-app.git"
   },
   "scripts": {
-    "prettify": "prettier --write \"**/*.{ts,json,md}\"",
+    "prettify": "prettier --write \"**/*.{ts,tsx,json,md,scss}\"",
     "build:shared": "npm run build -w shared",
-    "build:backend": "npm run build -w backend"
+    "build:backend": "npm run build -w backend",
+    "build:frontend": "npm run build -w frontend"
   },
   "engines": {
     "node": "18.x.x",
@@ -17,7 +18,8 @@
   },
   "workspaces": [
     "shared",
-    "backend"
+    "backend",
+    "frontend"
   ],
   "devDependencies": {
     "@types/node": "^16.11.10",
