@@ -1,0 +1,79 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 10px;
+}
+
+.form-title {
+  font-family: Merriweather, serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: left;
+}
+
+.form-inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.forgot-pass-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.forgot-pass-caption {
+  font-family: Lato, serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  color: #B29F7E;
+  cursor: pointer;
+}
+
+.submit-btn {
+  height: 44px;
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  background: #E0E0E0;
+  height: 48px;
+  border-radius: 2px;
+  padding-left: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+}
+
+.form-input::placeholder {
+  color: #172234;
+}
+
+.form-controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.no-account-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.no-account-caption {
+  font-family: Lato, serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+}
+
+.no-account-link {
+  color: #B29F7E;
+}

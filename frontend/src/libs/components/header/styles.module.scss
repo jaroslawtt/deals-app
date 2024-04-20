@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 0 5%;
+  background: var(--dark-desaturated-blue);
+}
+
+.control-panel {
+  display: flex;
+  gap: 10px;
+}
+
+.sign-up-btn {
+  width: 160px;
+  height: 44px;
+  padding: 11px 0 11px 0;
+  border-radius: 5px;
+  border: 0;
+  background: #B29F7E;
+  color: var(--white);
+}
+
+.sign-in-btn {
+  width: 160px;
+  height: 44px;
+  padding: 11px 0 11px 0;
+  border-radius: 5px;
+  color: #B29F7E;
+}
+
+.log-out-btn {
+  width: 160px;
+  height: 44px;
+  padding: 11px 0 11px 0;
+  border-radius: 5px;
+  color: var(--white);
+  background: var(--red);
+}

@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  -ms-overflow-style: none;
+  font-family: Roboto, sans-serif;
+  scrollbar-width: none;
+}
+
+#root {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
