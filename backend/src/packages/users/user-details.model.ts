@@ -1,5 +1,9 @@
 import { Model, RelationMappings } from 'objection';
-import { AbstractModel, DatabaseTableName, getJoinRelationPath } from '~/libs/packages/database/database.js';
+import {
+  AbstractModel,
+  DatabaseTableName,
+  getJoinRelationPath,
+} from '~/libs/packages/database/database.js';
 import { UserModel } from '~/packages/users/users.js';
 
 class UserDetailsModel extends AbstractModel {
@@ -13,7 +17,7 @@ class UserDetailsModel extends AbstractModel {
 
   public static override get tableName(): string {
     return DatabaseTableName.USER_DETAILS;
-  };
+  }
 
   public static override get relationMappings(): RelationMappings {
     return {
@@ -28,8 +32,8 @@ class UserDetailsModel extends AbstractModel {
           to: getJoinRelationPath<UserModel>(DatabaseTableName.USERS, 'id'),
         },
       },
-    }
-  };
+    };
+  }
 }
 
 export { UserDetailsModel };

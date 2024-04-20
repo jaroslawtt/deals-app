@@ -1,9 +1,5 @@
 const DealCard = () => {
-  return (
-    <div>
-
-    </div>
-  );
+  return <div></div>;
 };
 
 export { DealCard };

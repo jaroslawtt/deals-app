@@ -5,7 +5,11 @@ import { AppEnvironment } from '~/libs/enums/enums.js';
 import { type ILogger } from '~/libs/packages/logger/logger.js';
 
 import { type IConfig } from './libs/interfaces/interfaces.js';
-import { type EnvironmentSchema, type EncryptConfig, type AuthConfig } from './libs/types/types.js';
+import {
+  type EnvironmentSchema,
+  type EncryptConfig,
+  type AuthConfig,
+} from './libs/types/types.js';
 
 class Config implements IConfig {
   private logger: ILogger;
@@ -29,7 +33,6 @@ class Config implements IConfig {
 
     this.ENV = this.envSchema.getProperties();
     this.logger.info('.env file found and successfully parsed!');
-
 
     this.AUTH = this.authConfig;
     this.ENCRYPTION = this.encryptionConfig;

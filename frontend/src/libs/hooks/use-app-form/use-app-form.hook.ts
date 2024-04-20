@@ -3,14 +3,16 @@ import {
   type Control,
   type DeepPartial,
   type FieldErrors,
-  type FieldValues, FormState,
+  type FieldValues,
+  FormState,
   type Mode,
   type UseFormGetValues,
   type UseFormHandleSubmit,
   type UseFormProps,
-  type UseFormReset, UseFormSetValue,
+  type UseFormReset,
+  UseFormSetValue,
 } from 'react-hook-form';
-import { useForm  } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import { type ValidationSchema } from '~/libs/types/types.js';
 

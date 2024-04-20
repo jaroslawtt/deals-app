@@ -127,7 +127,6 @@ class UserEntity implements IEntity {
       lastName: this.lastName as string,
     };
   }
-
 }
 
 export { UserEntity };

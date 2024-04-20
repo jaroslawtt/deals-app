@@ -1,6 +1,4 @@
-import {
-  type ServerAppRouteParameters
-} from '~/libs/packages/server-application/libs/types/server-app-route-parameters.type.js';
+import { type ServerAppRouteParameters } from '~/libs/packages/server-application/libs/types/server-app-route-parameters.type.js';
 
 type DefaultApiHandlerOptions = {
   headers?: Parameters<ServerAppRouteParameters['handler']>[0]['headers'];

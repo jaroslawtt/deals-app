@@ -19,7 +19,7 @@ const Button: React.FC<Properties> = ({
   className,
   onClick,
   to,
-  type
+  type,
 }: Properties) => {
   const validClassNames = getValidClassNames(
     styles['button'],

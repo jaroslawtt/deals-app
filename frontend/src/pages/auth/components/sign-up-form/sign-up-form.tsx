@@ -2,7 +2,6 @@ import styles from './styles.module.scss';
 import { Button, Input, Link } from '~/libs/components/components.js';
 import { useAppForm } from '~/libs/hooks/hooks.js';
 import {
-  type UserSignInRequestDto,
   type UserSignUpRequestDto,
   userSignUpValidationSchema,
 } from '~/packages/users/users.js';
@@ -12,14 +11,13 @@ import { useCallback } from '~/libs/hooks/hooks';
 import React from 'react';
 
 type Properties = {
-  onSubmit: (payload: UserSignInRequestDto) => void;
+  onSubmit: (payload: UserSignUpRequestDto) => void;
 };
 const SignUpForm: React.FC<Properties> = ({ onSubmit }: Properties) => {
-  const { control, errors, handleSubmit } =
-    useAppForm<UserSignUpRequestDto>({
-      defaultValues: DEFAULT_SIGN_UP_PAYLOAD,
-      validationSchema: userSignUpValidationSchema,
-    });
+  const { control, errors, handleSubmit } = useAppForm<UserSignUpRequestDto>({
+    defaultValues: DEFAULT_SIGN_UP_PAYLOAD,
+    validationSchema: userSignUpValidationSchema,
+  });
 
   const handleFormSubmit = useCallback(
     (_evt: React.FormEvent) => {
@@ -76,7 +74,7 @@ const SignUpForm: React.FC<Properties> = ({ onSubmit }: Properties) => {
         />
         <div className={styles['no-account-wrapper']}>
           <span className={styles['no-account-caption']}>
-           Already have an account?{' '}
+            Already have an account?{' '}
             <Link to={AppRoute.SIGN_IN} className={styles['no-account-link']}>
               Log in
             </Link>
@@ -87,4 +85,4 @@ const SignUpForm: React.FC<Properties> = ({ onSubmit }: Properties) => {
   );
 };
 
-export default SignUpForm;
+export { SignUpForm };

@@ -7,7 +7,7 @@ const UserValidationMessage = {
   FIRST_NAME_REQUIRE: 'First name is required',
   FIRST_NAME_IS_INVALID: 'Incorrect first name',
   LAST_NAME_REQUIRE: 'Last name is required',
-  LAST_NAME_IS_INVALID: 'Incorrect last name'
+  LAST_NAME_IS_INVALID: 'Incorrect last name',
 } as const;
 
 export { UserValidationMessage };

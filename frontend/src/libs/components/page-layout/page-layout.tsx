@@ -7,7 +7,10 @@ type Properties = {
   showHeaderControls?: boolean | undefined;
 };
 
-const PageLayout: React.FC<Properties> = ({ children, showHeaderControls = true }) => {
+const PageLayout: React.FC<Properties> = ({
+  children,
+  showHeaderControls = true,
+}) => {
   const { user } = useAppSelector(({ auth }) => ({
     user: auth.user,
   }));

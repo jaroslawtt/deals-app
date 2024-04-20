@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import { PageLayout, Redirect } from '~/libs/components/components.js';
-import { SignInForm } from '~/pages/auth/components/components.js';
+import { SignInForm, SignUpForm } from '~/pages/auth/components/components.js';
 import {
   useAppDispatch,
   useAppSelector,
@@ -13,7 +13,6 @@ import {
 } from '~/packages/users/users.js';
 import { AppRoute } from '~/libs/enums/enums.js';
 import { actions as authActions } from '~/slices/auth/auth.js';
-import SignUpForm from '~/pages/auth/components/sign-up-form/sign-up-form';
 
 const AuthPage: React.FC = () => {
   const dispatch = useAppDispatch();

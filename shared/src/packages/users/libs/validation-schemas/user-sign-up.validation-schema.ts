@@ -41,7 +41,7 @@ const userSignUp = joi.object<UserSignUpRequestDto, true>({
     .messages({
       'string.pattern.base': UserValidationMessage.LAST_NAME_IS_INVALID,
       'string.empty': UserValidationMessage.LAST_NAME_REQUIRE,
-    })
+    }),
 });
 
 export { userSignUp };

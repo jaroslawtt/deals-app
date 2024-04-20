@@ -1,4 +1,8 @@
-import { AbstractModel, DatabaseTableName, getJoinRelationPath } from '~/libs/packages/database/database.js';
+import {
+  AbstractModel,
+  DatabaseTableName,
+  getJoinRelationPath,
+} from '~/libs/packages/database/database.js';
 import { Model, RelationMappings } from 'objection';
 import { UserDetailsModel } from '~/packages/users/users.js';
 
