@@ -29,6 +29,11 @@ export {
 } from './libs/types/types.js';
 export { AuthApiPath } from './packages/auth/auth.js';
 export {
+  DealsApiPath,
+  type DealGetAllItemResponseDto,
+  type DealGetAllResponseDto,
+} from './packages/deals/deals.js';
+export {
   type UserSignInResponseDto,
   type UserAuthResponse,
   type UserTokenPayload,
