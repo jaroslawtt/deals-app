@@ -9,3 +9,4 @@ export { database };
 export { Abstract as AbstractModel } from './abstract.model.js';
 export { DatabaseTableName } from './libs/enums/enums.js';
 export { type IDatabase } from './libs/interfaces/interfaces.js';
+export { getJoinRelationPath } from './libs/helpers/helpers.js';

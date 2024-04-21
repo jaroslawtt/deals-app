@@ -1,0 +1,61 @@
+.card-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-image {
+  object-fit: inherit;
+}
+
+.card-data {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-family: Lato, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: left;
+  color: var(--white);
+  width: 100%;
+}
+
+.card-main-caption {
+  font-family: Merriweather, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: left;
+}
+
+.card-sub-data {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-price-caption {
+  font-family: Lato, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: left;
+  word-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+}

@@ -1,0 +1,28 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 12px;
+  color: var(--gray-600);
+  font-size: 18px;
+  background-color: var(--white);
+  border: 1px solid var(--steam-bath);
+  outline: none;
+  border-radius: 3px;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: Merriweather, serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
