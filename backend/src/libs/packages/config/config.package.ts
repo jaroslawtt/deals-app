@@ -53,6 +53,12 @@ class Config implements IConfig {
           env: 'PORT',
           default: null,
         },
+        HOST: {
+          doc: 'Host for connection',
+          format: String,
+          env: 'HOST',
+          default: null,
+        },
       },
       DB: {
         CONNECTION_STRING: {
