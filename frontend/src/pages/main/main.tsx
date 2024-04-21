@@ -1,16 +1,34 @@
 import styles from './styles.module.scss';
 import { Button, PageLayout } from '~/libs/components/components.js';
-import { useCallback, useRef } from '~/libs/hooks/hooks.js';
+import {
+  useAppDispatch,
+  useAppSelector,
+  useCallback,
+  useEffect,
+  useRef,
+} from '~/libs/hooks/hooks.js';
+import { actions as dealsActions } from '~/slices/deals/deals.js';
+import { DealCard } from '~/pages/main/components/components';
 
 const MainPage = () => {
-  const dealsListRef = useRef<HTMLDivElement>([]);
+  const dealsListRef = useRef<HTMLDivElement | null>(null);
   const handleScrollToDeals = useCallback(() => {
-    dealsListRef.current.scrollIntoView({
+    (dealsListRef.current as HTMLDivElement).scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'start',
       inline: 'nearest',
     });
   }, []);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(dealsActions.getAll());
+  }, []);
+
+  const { deals: dealsList } = useAppSelector(({ deals }) => ({
+    deals: deals.deals,
+  }));
 
   return (
     <PageLayout>
@@ -39,6 +57,15 @@ const MainPage = () => {
           className={styles['deals-list-section']}
         >
           <span className={styles['deals-list-caption']}>Open Deals</span>
+          <div className={styles['deals-list-wrapper']}>
+            <div className={styles['deals-list']}>
+              {dealsList
+                ? dealsList.map((deal) => (
+                    <DealCard key={deal.id} deal={deal} />
+                  ))
+                : null}
+            </div>
+          </div>
         </div>
       </div>
     </PageLayout>

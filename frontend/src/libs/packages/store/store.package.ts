@@ -12,18 +12,22 @@ import { handleError } from './middlewares/middlewares.js';
 
 import { storage } from '~/libs/packages/storage/storage.js';
 import { authApi } from '~/packages/auth/auth.js';
+import { dealsApi } from '~/packages/deals/deals.js';
 
 import { notification } from '~/libs/packages/notification/notification.js';
 import { reducer as authReducer } from '~/slices/auth/auth.js';
 import { reducer as appReducer } from '~/slices/app/app.js';
+import { reducer as dealsReducer } from '~/slices/deals/deals.js';
 
 type RootReducer = {
   auth: ReturnType<typeof authReducer>;
   app: ReturnType<typeof appReducer>;
+  deals: ReturnType<typeof dealsReducer>;
 };
 
 type ExtraArguments = {
   authApi: typeof authApi;
+  dealsApi: typeof dealsApi;
   storage: typeof storage;
   notification: typeof notification;
 };
@@ -43,6 +47,7 @@ class Store {
       reducer: {
         auth: authReducer,
         app: appReducer,
+        deals: dealsReducer,
       },
       middleware: (getDefaultMiddleware) => {
         return [
@@ -60,6 +65,7 @@ class Store {
   public get extraArguments(): ExtraArguments {
     return {
       authApi,
+      dealsApi,
       storage,
       notification,
     };

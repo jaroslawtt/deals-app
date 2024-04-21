@@ -8,6 +8,7 @@ import {
 import { type AsyncThunkConfig } from '~/libs/types/types.js';
 import { StorageKey } from '~/libs/packages/storage/storage.js';
 import { SliceName } from '~/libs/enums/enums.js';
+import { HttpError } from '~/libs/packages/http/http';
 
 const sliceName = SliceName.AUTH;
 
@@ -43,12 +44,23 @@ const getCurrentUser = createAsyncThunk<
   UserAuthResponse,
   undefined,
   AsyncThunkConfig
->(`${sliceName}/get-current`, async (payload, { extra }) => {
+>(`${sliceName}/get-current`, async (_, { extra, rejectWithValue }) => {
   const { authApi } = extra;
 
-  const user = await authApi.getCurrent();
+  try {
+    return await authApi.getCurrent();
+  } catch (error) {
+    if (error instanceof HttpError) {
+      return rejectWithValue({
+        message: error.message,
+        status: error.status,
+      });
+    }
 
-  return user;
+    return rejectWithValue({
+      message: 'Error',
+    });
+  }
 });
 
 const signOut = createAsyncThunk<void, undefined, AsyncThunkConfig>(
