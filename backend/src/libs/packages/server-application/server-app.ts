@@ -165,9 +165,12 @@ class ServerApp implements IServerApp {
 
     this.database.connect();
 
+    console.log(this.config.ENV.APP.HOST);
+
     await this.app
       .listen({
         port: this.config.ENV.APP.PORT,
+        host: this.config.ENV.APP.HOST,
       })
       .catch((error: Error) => {
         this.logger.error(error.message, {
