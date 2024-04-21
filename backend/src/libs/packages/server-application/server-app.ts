@@ -1,6 +1,7 @@
 import swagger, { type StaticDocumentSpec } from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import Fastify, { type FastifyError } from 'fastify';
+import cors from '@fastify/cors';
 
 import { ServerErrorType } from '~/libs/enums/enums.js';
 import { type ValidationError } from '~/libs/exceptions/exceptions.js';
@@ -95,6 +96,10 @@ class ServerApp implements IServerApp {
     );
   }
 
+  private initCors() {
+    return this.app.register(cors);
+  }
+
   private initValidationCompiler(): void {
     this.app.setValidatorCompiler<ValidationSchema>(({ schema }) => {
       return <T, R = ReturnType<ValidationSchema['validate']>>(data: T): R => {
@@ -163,9 +168,9 @@ class ServerApp implements IServerApp {
 
     this.initRoutes();
 
-    this.database.connect();
+    this.initCors();
 
-    console.log(this.config.ENV.APP.HOST);
+    this.database.connect();
 
     await this.app
       .listen({
