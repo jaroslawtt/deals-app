@@ -13,7 +13,11 @@ const DealCard: React.FC<Properties> = ({ deal }: Properties) => {
   return (
     <div className={styles['card-wrapper']}>
       <div className={styles['card-image-wrapper']}>
-        <img className={styles['card-image']} alt="deal image" src={`${deal.imageLink}`} />
+        <img
+          className={styles['card-image']}
+          alt="deal image"
+          src={`${deal.imageLink}`}
+        />
         <div className={styles['card-data']}>
           <span className={styles['card-main-caption']}>{deal.name}</span>
           <div className={styles['card-sub-data']}>
