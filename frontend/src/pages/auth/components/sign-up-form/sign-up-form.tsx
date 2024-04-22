@@ -73,7 +73,7 @@ const SignUpForm: React.FC<Properties> = ({ onSubmit }: Properties) => {
           label="Sign Up"
         />
         <div className={styles['no-account-wrapper']}>
-          <span className={styles['no-account-caption']}>
+          <span className={styles['already-account-caption']}>
             Already have an account?{' '}
             <Link to={AppRoute.SIGN_IN} className={styles['no-account-link']}>
               Log in

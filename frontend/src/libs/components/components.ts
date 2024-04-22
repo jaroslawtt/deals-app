@@ -8,5 +8,6 @@ export { PageLayout } from './page-layout/page-layout.js';
 export { App } from './app/app.js';
 export { Input } from './input/input.js';
 export { ErrorMessage } from './error-message/error-message.js';
+export { Icon } from './icon/icon.js';
 export { Provider as StoreProvider } from 'react-redux';
 export { Navigate as Redirect, Outlet as RouterOutlet } from 'react-router-dom';

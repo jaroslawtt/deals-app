@@ -39,3 +39,38 @@
   color: var(--white);
   background: var(--red);
 }
+
+.icon-wrapper {
+  display: none;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.log-in-icon {
+  fill: lightgreen;
+}
+
+.log-out-icon {
+  fill: red;
+}
+
+.controls-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .controls-wrapper {
+    display: none;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

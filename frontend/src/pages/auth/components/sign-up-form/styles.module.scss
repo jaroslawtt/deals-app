@@ -47,12 +47,14 @@
   width: 100%;
 }
 
-.no-account-caption {
+.already-account-caption {
   font-family: Lato, serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 22px;
   text-align: center;
+  display: flex;
+  gap: 5px;
 }
 
 .no-account-link {
