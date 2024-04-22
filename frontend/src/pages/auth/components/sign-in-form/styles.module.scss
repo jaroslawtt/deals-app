@@ -67,6 +67,8 @@
 }
 
 .no-account-caption {
+  display: flex;
+  gap: 5px;
   font-family: Lato, serif;
   font-size: 14px;
   font-weight: 600;

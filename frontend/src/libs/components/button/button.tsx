@@ -1,12 +1,13 @@
 import styles from './styles.module.scss';
 import { getValidClassNames } from '~/libs/helpers/helpers.js';
 import { AppRoute } from '~/libs/enums/enums.js';
-import { type ValueOf } from '~/libs/types/types.js';
-import { Link } from '~/libs/components/components.js';
+import { type IconType, type ValueOf } from '~/libs/types/types.js';
+import { Icon, Link } from '~/libs/components/components.js';
 
 type Properties = {
   label: string;
   style?: 'primary' | 'secondary';
+  icon?: IconType;
   className?: string | undefined;
   onClick?: (() => void) | undefined;
   to?: ValueOf<typeof AppRoute> | undefined;
@@ -20,10 +21,11 @@ const Button: React.FC<Properties> = ({
   onClick,
   to,
   type,
+  icon,
 }: Properties) => {
   const validClassNames = getValidClassNames(
     styles['button'],
-    styles[style],
+    icon ? styles['icon-btn'] : styles[style],
     className,
   );
 
@@ -33,9 +35,10 @@ const Button: React.FC<Properties> = ({
     </Link>
   ) : (
     <button type={type} className={validClassNames} onClick={onClick}>
+      {icon && <Icon iconName={icon} />}
       {label}
     </button>
   );
 };
 
-export { Button };
+export { Button, type Properties };
